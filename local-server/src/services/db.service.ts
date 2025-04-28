@@ -1,6 +1,4 @@
-import { openDB, DBSchema, IDBPDatabase } from "idb";
-import { Context } from "../models/context.model";
-import { Page } from "../models/page.model";
+import { openDB, IDBPDatabase } from "idb";
 import { DB } from "../models/db.model";
 
 let dbPromise: Promise<IDBPDatabase<DB>> | null = null;
