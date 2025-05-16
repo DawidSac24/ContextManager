@@ -2,6 +2,9 @@ import "../styles/ContextItem.css";
 
 import { ContextDTO } from "../../local-server/models/context.model";
 
+import Context from "./Context";
+import ContextEdition from "./ContextEdition";
+
 type Props = {
   context: ContextDTO;
   isSelected: boolean;
@@ -17,11 +20,9 @@ export default function ContextItem({
   context,
   isSelected,
   isEditing,
-  editedName,
   onSelect,
   onChange,
   onSave,
-  onSavePages,
 }: Props) {
   let buttonClassName: string = "";
   if (isSelected) {
@@ -33,23 +34,14 @@ export default function ContextItem({
   return (
     <li>
       <button onClick={onSelect} className={buttonClassName}>
-        { isEditing ? (
-          <div className="context-edition-container">
-            <input
-              type="text"
-              value={editedName}
-              onChange={(e) => onChange(e.target.value)}
-              className="context-input"
-            />
-            <button
-              className="save-context"
-              onClick={onSave}
-            >
-              SAVE
-            </button>
-          </div>
+        {isEditing ? (
+          <ContextEdition
+            editedName={context.name}
+            onChange={onChange}
+            onSave={onSave}
+          />
         ) : (
-          <h3>{context.name}</h3>
+          <Context contextName={context.name} />
         )}
       </button>
     </li>

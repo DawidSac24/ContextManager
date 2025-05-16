@@ -1,0 +1,19 @@
+footer {
+  height: 20%;
+  width: 100%;
+}
+
+.context-add-button-container {
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.context-add-button {
+  z-index: 90;
+  background-color: var(--primary-color);
+  text-align: center;
+}

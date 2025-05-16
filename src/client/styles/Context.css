@@ -1,0 +1,19 @@
+.context-container {
+  width: 100%;
+  height: 100%;
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.context-dropdown-button {
+  all: unset;
+  cursor: pointer;
+}
+
+.points-logo {
+  width: 20px;
+  height: 20px;
+}

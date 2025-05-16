@@ -16,3 +16,17 @@
 .main-content::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+
+.component-button {
+  /* Remove the button propriety */
+  all: unset;
+  cursor: pointer;
+
+  width: 25%;
+  height: 80%;
+  border-radius: 7px;
+
+  background-color: var(--primary-color);
+
+  text-align: center;
+}

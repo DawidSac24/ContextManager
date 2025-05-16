@@ -3,16 +3,14 @@ import "../styles/ContextsList.css";
 import { useContexts } from "../hooks/useContexts";
 
 import ContextItem from "./ContextItem";
-import ContextButtons from "./ContextButtons";
 
-export default function ContextsList() {
+function ContextsList() {
   const {
     contexts,
     selectedContext,
     isEditing,
     editedName,
     selectContext,
-    addContext,
     updateContext,
     deleteContext,
     savePages,
@@ -41,13 +39,8 @@ export default function ContextsList() {
           />
         ))}
       </ul>
-
-      <div className="add-context-button-container">
-        <button className="add-context-button context" onClick={onAdd}>
-          <h3>Add Context</h3>
-        </button>
-      </div>
-      
     </div>
   );
 }
+
+export default ContextsList;
