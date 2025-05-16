@@ -4,7 +4,6 @@ import { ContextDTO } from "../../local-server/models/context.model";
 
 type Props = {
   context: ContextDTO;
-  isOpened: boolean;
   isSelected: boolean;
   isEditing: boolean;
   editedName: string;
@@ -16,7 +15,6 @@ type Props = {
 
 export default function ContextItem({
   context,
-  isOpened,
   isSelected,
   isEditing,
   editedName,
@@ -29,14 +27,13 @@ export default function ContextItem({
   if (isSelected) {
     if (!isEditing) buttonClassName += " selected-context";
   }
-  if (isOpened) buttonClassName += " opened-context";
 
   buttonClassName += " context";
 
   return (
     <li>
       <button onClick={onSelect} className={buttonClassName}>
-        {(isEditing && isSelected) || isOpened ? (
+        { isEditing ? (
           <div className="context-edition-container">
             <input
               type="text"
@@ -46,7 +43,7 @@ export default function ContextItem({
             />
             <button
               className="save-context"
-              onClick={isOpened ? onSavePages : onSave}
+              onClick={onSave}
             >
               SAVE
             </button>

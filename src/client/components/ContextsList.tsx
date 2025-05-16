@@ -8,11 +8,9 @@ import ContextButtons from "./ContextButtons";
 export default function ContextsList() {
   const {
     contexts,
-    openedContext,
     selectedContext,
     isEditing,
     editedName,
-    openContext,
     selectContext,
     addContext,
     updateContext,
@@ -33,7 +31,6 @@ export default function ContextsList() {
           <ContextItem
             key={context.id}
             context={context}
-            isOpened={openedContext?.id === context.id}
             isSelected={selectedContext?.id === context.id}
             isEditing={isEditing}
             editedName={editedName}
@@ -43,15 +40,14 @@ export default function ContextsList() {
             onSavePages={() => savePages(context)}
           />
         ))}
-        <li></li>
       </ul>
 
-      <ContextButtons
-        onAdd={() => addContext({ name: "New Context" })}
-        onEdit={() => setIsEditing(!isEditing)}
-        onDelete={deleteContext}
-        onOpen={openContext}
-      />
+      <div className="add-context-button-container">
+        <button className="add-context-button context" onClick={onAdd}>
+          <h3>Add Context</h3>
+        </button>
+      </div>
+      
     </div>
   );
 }
