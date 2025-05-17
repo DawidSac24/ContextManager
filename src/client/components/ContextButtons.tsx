@@ -5,6 +5,7 @@ type Props = {
   onEdit: () => void;
   onDelete: () => void;
   onOpen: () => void;
+  onLoad: () => void;
 };
 
 export default function ContextButtons({
@@ -20,7 +21,7 @@ export default function ContextButtons({
           <h3>Add Context</h3>
         </button>
       </div>
-      <div className="action-butons">
+      <div className="action-buttons">
         <button className="component-button " onClick={onEdit}>
           EDIT
         </button>

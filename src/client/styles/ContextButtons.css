@@ -1,11 +1,16 @@
-.action-buttons {
+.component-buttons {
   position: fixed; /* Sticks to the window */
   bottom: 0;
   left: 0;
   z-index: 100; /* Ensure it's on top */
 
   width: 100%;
-  height: 15%;
+  height: 20%;
+}
+
+.action-buttons {
+  width: 100%;
+  height: 30%;
 
   background-color: var(--background-color);
 
@@ -20,7 +25,7 @@
   cursor: pointer;
 
   width: 25%;
-  height: 50%;
+  height: 60%;
   border-radius: 7px;
 
   background-color: var(--primary-color);
@@ -30,7 +35,7 @@
 
 .add-context-button-container {
   width: 100%;
-  height: 100%;
+  height: 70%;
 
   display: flex;
   justify-content: center;
